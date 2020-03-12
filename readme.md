@@ -1,1 +1,1 @@
-![welcome](https://i.pinimg.com/originals/aa/e0/27/aae027063326f4685db21c19303395dd.gif)
+![welcome](https://media.giphy.com/media/kw3ntE4YJ91Je/giphy.gif)
