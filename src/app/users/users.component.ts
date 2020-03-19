@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { User, USERS } from "../user";
+
+import { User } from "../user";
 import { UserService } from "../user.service";
+import { MessageService } from "../message.service";
 
 @Component({
   selector: "Users",
@@ -11,7 +13,10 @@ export class UsersComponent implements OnInit {
   users: User[];
   selectedUser: User;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -23,5 +28,6 @@ export class UsersComponent implements OnInit {
 
   onSelect(user: User): void {
     this.selectedUser = user;
+    this.messageService.add(`UserService: Selected ${user.name}-${user.id}`);
   }
 }
