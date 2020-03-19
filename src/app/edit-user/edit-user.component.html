@@ -1,0 +1,6 @@
+<div *ngIf="user">
+  <h2>Edit {{ user.name }}-{{ user.id }}</h2>
+  <input [(ngModel)]="user.name" placeholder="name" />
+  <br />
+  <input [(ngModel)]="user.id" placeholder="id" />
+</div>

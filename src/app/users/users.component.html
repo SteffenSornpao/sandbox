@@ -9,9 +9,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedUser">
-  <h2>Edit {{ selectedUser.name }}-{{ selectedUser.id }}</h2>
-  <input [(ngModel)]="selectedUser.id" placeholder="id" />
-  <br />
-  <input [(ngModel)]="selectedUser.name" placeholder="name" />
-</div>
+<EditUser [user]="selectedUser"></EditUser>

@@ -1,40 +1,27 @@
 import { Component, OnInit } from "@angular/core";
 import { User, USERS } from "../user";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "Users",
   styleUrls: ["./users.component.less"],
-  // styles: [
-  //   `
-  //     p {
-  //       color: green;
-  //       span {
-  //         color: red;
-  //       }
-  //     }
-  //   `
-  // ],
   templateUrl: "users.component.html"
-  // template: `
-  //   <ul>
-  //     <li *ngFor="let user of users" (click)="onSelect(user)">
-  //       <h2>{{ user.id }} - {{ user.name }}</h2>
-  //       <div>
-  //         <input [(ngModel)]="user.id" placeholder="id" />
-  //         <br />
-  //         <input [(ngModel)]="user.name" placeholder="name" />
-  //       </div>
-  //     </li>
-  //   </ul>
-  // `
 })
 export class UsersComponent implements OnInit {
-  users = USERS;
+  users: User[];
   selectedUser: User;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.userService.getUsers().subscribe(users => (this.users = users));
+  }
+
   onSelect(user: User): void {
     this.selectedUser = user;
   }
-  constructor() {}
-
-  ngOnInit(): void {}
 }
