@@ -1,0 +1,26 @@
+ul {
+  display: inline-block;
+  list-style: none;
+  li {
+    background: rgb(243, 243, 243);
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin: 0.25em 0;
+    overflow: hidden;
+    padding: 0.5em 0;
+    &.selected {
+      span {
+        &:first-child {
+          background: rgb(255, 186, 146);
+        }
+      }
+    }
+    span {
+      padding: 0.5em;
+      &:first-child {
+        background: rgb(221, 221, 221);
+        color: white;
+      }
+    }
+  }
+}

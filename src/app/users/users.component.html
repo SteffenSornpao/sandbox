@@ -1,4 +1,17 @@
-<p>
-  {{ user.id }} -
-  <span>{{ user.name }}</span>
-</p>
+<ul>
+  <li
+    *ngFor="let user of users"
+    (click)="onSelect(user)"
+    [class.selected]="user === selectedUser"
+  >
+    <span>{{ user.id }}</span>
+    <span>{{ user.name }}</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+  <h2>Edit {{ selectedUser.name }}-{{ selectedUser.id }}</h2>
+  <input [(ngModel)]="selectedUser.id" placeholder="id" />
+  <br />
+  <input [(ngModel)]="selectedUser.name" placeholder="name" />
+</div>
