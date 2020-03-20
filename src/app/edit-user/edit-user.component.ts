@@ -30,4 +30,12 @@ export class EditUserComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.userService.updateUser(this.user).subscribe(() => this.goBack());
+  }
+
+  delete(user: User): void {
+    this.userService.deleteUser(user).subscribe(() => this.goBack());
+  }
 }

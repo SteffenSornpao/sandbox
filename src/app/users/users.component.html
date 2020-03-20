@@ -1,3 +1,11 @@
+<div>
+  <label
+    >Username:
+    <input #userName />
+  </label>
+  <button (click)="add(userName.value); userName.value = ''">Add</button>
+</div>
+
 <ul>
   <a *ngFor="let user of users" routerLink="/users/{{ user.id }}">
     <li>
