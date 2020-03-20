@@ -7,9 +7,10 @@ import { AppComponent } from "./app.component";
 import { UsersComponent } from "./users/users.component";
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, EditUserComponent, MessagesComponent],
+  declarations: [AppComponent, UsersComponent, EditUserComponent, MessagesComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
