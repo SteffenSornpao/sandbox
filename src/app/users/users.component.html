@@ -1,12 +1,10 @@
 <ul>
-  <li
-    *ngFor="let user of users"
-    (click)="onSelect(user)"
-    [class.selected]="user === selectedUser"
-  >
-    <span>{{ user.id }}</span>
-    <span>{{ user.name }}</span>
-  </li>
+  <a *ngFor="let user of users" routerLink="/users/{{ user.id }}">
+    <li>
+      <span>{{ user.id }}</span>
+      <span>{{ user.name }}</span>
+    </li>
+  </a>
 </ul>
 
-<EditUser [user]="selectedUser"></EditUser>
+<!-- <EditUser [user]="selectedUser"></EditUser> -->

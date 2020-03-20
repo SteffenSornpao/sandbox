@@ -25,9 +25,4 @@ export class UsersComponent implements OnInit {
   getUsers(): void {
     this.userService.getUsers().subscribe(users => (this.users = users));
   }
-
-  onSelect(user: User): void {
-    this.selectedUser = user;
-    this.messageService.add(`UserService: Selected ${user.name}-${user.id}`);
-  }
 }
