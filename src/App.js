@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import UserContext from "./context/user-context";
+import Content from "./components/Content";
+import Profile from "./components/Profile";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext>
+      <Content>
+        <Profile />
+      </Content>
+    </UserContext>
   );
 }
 
-export default App;
+// const Header = () => {
+//   return <header></header>;
+// };
+
+// const Content = ({ children }) => {
+//   return <main>{children}</main>;
+// };
+
+// const Profile = () => {
+//   const user = useContext(UserContext);
+//   console.log(user);
+//   return <div>{user}</div>;
+// };
