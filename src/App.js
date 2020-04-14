@@ -12,17 +12,3 @@ export default function App() {
     </UserContext>
   );
 }
-
-// const Header = () => {
-//   return <header></header>;
-// };
-
-// const Content = ({ children }) => {
-//   return <main>{children}</main>;
-// };
-
-// const Profile = () => {
-//   const user = useContext(UserContext);
-//   console.log(user);
-//   return <div>{user}</div>;
-// };
