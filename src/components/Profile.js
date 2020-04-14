@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
-import { UserContext } from "../context/user-context";
+import React from "react";
+import { useStore } from "../store/store";
 
 export default () => {
-  const { user, updateUser } = useContext(UserContext);
+  const [state, dispatch] = useStore();
 
   const saveUser = () => {
     const newUser = document.querySelector("#user").value;
-    updateUser(newUser);
+    dispatch("UPDATE_USER", newUser);
   };
 
   return (
     <div>
-      <div>{user}</div>
+      <div>{state.user}</div>
       <input type="text" id="user" placeholder="Edit User Name" />
       <input type="submit" value="Save" onClick={saveUser} />
     </div>
